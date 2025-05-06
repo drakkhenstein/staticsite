@@ -1,4 +1,5 @@
-
+from textnode import TextNode, TextType
+from htmlnode import HTMLNode
 
 def extract_markdown_images(text):
     import re
