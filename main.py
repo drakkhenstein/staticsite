@@ -1,3 +1,4 @@
+from generatepage import generate_page
 import os
 import shutil
 
@@ -31,6 +32,7 @@ def copy_static_files(source_dir, dest_dir):
 
 def main():
     copy_static_files("static", "public")
+    generate_page("content/index.md", "template.html", "public/index.html")
 
 if __name__ == "__main__":
     main()
