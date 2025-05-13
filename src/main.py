@@ -1,5 +1,6 @@
 from textnode import TextNode, TextType
 from generatepage import generate_page
+from generatepagesrecursive import generate_pages_recursive
 import os
 import shutil
 
@@ -33,13 +34,12 @@ def copy_static_files(source_dir, dest_dir):
 
 
 def main():
+    content_dir = "content"
+    template_path = "template.html"
+    public_dir = "public"
     copy_static_files("static", "public")
     #print("About to generate page")
-    generate_page("content/index.md", "template.html", "public/index.html")
-    generate_page("content/blog/glorfindel/index.md", "template.html", "public/blog/glorfindel/index.html")
-    generate_page("content/blog/tom/index.md", "template.html", "public/blog/tom/index.html")
-    generate_page("content/blog/majesty/index.md", "template.html", "public/blog/majesty/index.html")
-    generate_page("content/contact/index.md", "template.html", "public/contact/index.html")
+    generate_pages_recursive(content_dir, template_path, public_dir)
     #print("Page generated")
     
 if __name__ == "__main__":
