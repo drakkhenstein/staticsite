@@ -3,6 +3,12 @@ from generatepage import generate_page
 from generatepagesrecursive import generate_pages_recursive
 import os
 import shutil
+import sys
+
+if len(sys.argv) > 1:
+    basepath = sys.argv[1]
+else:
+    basepath = "/"
 
 def copy_static_files(source_dir, dest_dir):
     # First, check if the destination directory exists and delete it if it does
@@ -36,10 +42,10 @@ def copy_static_files(source_dir, dest_dir):
 def main():
     content_dir = "content"
     template_path = "template.html"
-    public_dir = "public"
-    copy_static_files("static", "public")
+    public_dir = "docs"
+    copy_static_files("static", "docs")
     #print("About to generate page")
-    generate_pages_recursive(content_dir, template_path, public_dir)
+    generate_pages_recursive(content_dir, template_path, public_dir, basepath)
     #print("Page generated")
     
 if __name__ == "__main__":
