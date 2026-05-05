@@ -1,0 +1,1 @@
+This is a static website generator. It generates html content based on a template and some code. All the setup is done on the back end. This program sets up a blog on the Lord of the Rings, with pictures and text. Characters from the books and the author JRR Tolkien, have their own sections. There is also some contact information on the blogger of the site.
